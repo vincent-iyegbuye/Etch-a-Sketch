@@ -32,6 +32,8 @@ function buildGrid(size){
         squareDiv.style.width = `${squareSize}px`;
         squareDiv.style.height = `${squareSize}px`;
         squareDiv.dataset.interaction = 0;
+        squareDiv.dataset.color = "";
+
 
         //const currColor = getComputedStyle(squareDiv).backgroundColor
 
@@ -42,14 +44,14 @@ function buildGrid(size){
 
             if (count < 10) {
                 count++;
-                this.dataset.interactions = count;
+                this.dataset.interaction = count;
+
+                 if (count === 1) {
+                    this.dataset.color = getRandomColor();
+                }
 
                 let opacity = count / 10;
-                let color;
-                if(count == 1){
-                     color = getRandomColor();
-
-                }
+                let color = this.dataset.color;
                 
                 this.style.backgroundColor = `rgba(${color}, ${opacity})`;
             }
