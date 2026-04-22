@@ -75,6 +75,7 @@ button:active {
     flex-wrap: wrap;
     width: 960px;
     height: 960px;
+    align-content: flex-start;
 
     /* Clean grid lines */
     gap: 1px;
