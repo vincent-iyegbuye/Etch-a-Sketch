@@ -13,7 +13,7 @@ resizeBtn.addEventListener("click", () =>{
         buildGrid(gridSize);
         resizeBtn.textContent = `${gridSize} x ${gridSize}`; 
     } else{
-        console.warn("Enter a number between 1 and 100.");
+        alert("Enter a number between 1 and 100.");
     }
 })
 function buildGrid(size){
