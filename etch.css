@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    background-color:gray ;
+    width: 960px;
+    height: 960px;
+    flex-wrap: wrap;
+
+}
+
+.square{
+    background-color: red;
+    width: calc(960px/16);
+    height: calc(960px/16);
+    box-sizing: border-box;
+    border: 1px solid black;
+}
