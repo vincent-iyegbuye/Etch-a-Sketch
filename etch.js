@@ -25,7 +25,8 @@ clearBtn.addEventListener("click", () => {
 function buildGrid(size){
     container.replaceChildren();
 
-    const squareSize = 960 / size;
+    const gap = 1;
+    const squareSize = (960 - gap * (size - 1)) / size;
     for(let i = 0; i < (size * size); i++){
         const squareDiv = document.createElement('div');
         squareDiv.classList.add('square');
