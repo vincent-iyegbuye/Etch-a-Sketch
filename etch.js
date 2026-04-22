@@ -36,11 +36,18 @@ function buildGrid(size){
         //const currColor = getComputedStyle(squareDiv).backgroundColor
 
         squareDiv.addEventListener("mouseenter",()=>{
-            squareDiv.style.backgroundColor = "blue";
+            squareDiv.style.backgroundColor = getRandomColor;
         });
 
 
     }
+}
+
+function getRandomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
 buildGrid(gridSize);
