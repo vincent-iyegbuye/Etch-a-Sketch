@@ -31,13 +31,31 @@ function buildGrid(size){
         squareDiv.classList.add('square');
         squareDiv.style.width = `${squareSize}px`;
         squareDiv.style.height = `${squareSize}px`;
-        container.appendChild(squareDiv);
+        squareDiv.dataset.interaction = 0;
 
         //const currColor = getComputedStyle(squareDiv).backgroundColor
 
-        squareDiv.addEventListener("mouseenter",()=>{
-            squareDiv.style.backgroundColor = getRandomColor;
+        squareDiv.addEventListener("mouseenter",function(){
+            let count = Number(this.dataset.interaction);
+
+            console.log(count)
+
+            if (count < 10) {
+                count++;
+                this.dataset.interactions = count;
+
+                let opacity = count / 10;
+                let color;
+                if(count == 1){
+                     color = getRandomColor();
+
+                }
+                
+                this.style.backgroundColor = `rgba(${color}, ${opacity})`;
+            }
         });
+
+        container.appendChild(squareDiv);
 
 
     }
@@ -47,7 +65,7 @@ function getRandomColor() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
   const b = Math.floor(Math.random() * 256);
-  return `rgb(${r}, ${g}, ${b})`;
+  return `${r},${g},${b}`;
 }
 
 buildGrid(gridSize);
