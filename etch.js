@@ -6,7 +6,17 @@ function buildGrid(size){
         const squareDiv = document.createElement('div');
         squareDiv.classList.add('square');
         container.appendChild(squareDiv);
+
+        //const currColor = getComputedStyle(squareDiv).backgroundColor
+
+        squareDiv.addEventListener("mouseenter",()=>{
+            squareDiv.style.backgroundColor = "blue";
+        });
+
+
     }
 }
 
 buildGrid(gridSize);
+
+
