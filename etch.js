@@ -15,7 +15,13 @@ resizeBtn.addEventListener("click", () =>{
     } else{
         alert("Enter a number between 1 and 100.");
     }
-})
+});
+
+const clearBtn = document.querySelector("#clear-btn");
+
+clearBtn.addEventListener("click", () => {
+    buildGrid(gridSize);
+});
 function buildGrid(size){
     container.replaceChildren();
 
